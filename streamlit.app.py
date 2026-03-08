@@ -829,7 +829,7 @@ def stop_automation(user_id):
 def login_page():
     st.markdown("""
     <div class="main-header">
-        <h1>ðŸ¦‚END TO END BY VIRAT RAJPUT</h1>
+        <h1>END TO END BY AYUSH PANDIT</h1>
         <p>END TO END (E2EE) OFFLINE TOOL</p>
     </div>
     """, unsafe_allow_html=True)
@@ -877,14 +877,14 @@ def login_page():
                     else:
                         st.error(f"âŒ {message}")
                 else:
-                    st.error("âŒ PASSWORDS DO NOT MATCH!")
+                    st.error("PASSWORDS DO NOT MATCH!")
             else:
-                st.warning("âš ï¸ PLEASE FILL ALL FIELDS")
+                st.warning("PLEASE FILL ALL FIELDS")
 
 def main_app():
     st.markdown("""
     <div class="main-header">
-        <h1>â¤ïE2E VIRAT RAJPUT END TO END OFFLINE SERVER</h1>
+        <h1>AYUSH END TO END OFFLINE SERVER</h1>
         <p>FACEBOOK E2EE CONVO SERVER SYSTEM </p>
     </div>
     """, unsafe_allow_html=True)
@@ -897,7 +897,7 @@ def main_app():
             if user_config and user_config['chat_id']:
                 start_automation(user_config, st.session_state.user_id)
     
-    st.sidebar.markdown('<div class="sidebar-header">ðŸ‘¤ USER DASHBOARD</div>', unsafe_allow_html=True)
+    st.sidebar.markdown('<div class="sidebar-header">USER DASHBOARD</div>', unsafe_allow_html=True)
     st.sidebar.markdown(f"**USERNAME:** {st.session_state.username}")
     st.sidebar.markdown(f"**USER ID:** {st.session_state.user_id}")
     st.sidebar.markdown('<div class="success-box">âœ… PREMIUM ACCESS</div>', unsafe_allow_html=True)
@@ -916,7 +916,7 @@ def main_app():
     user_config = db.get_user_config(st.session_state.user_id)
     
     if user_config:
-        tab1, tab2 = st.tabs(["E2EE SET-UPâœ…", "ðŸ”¥ AUTOMATION"])
+        tab1, tab2 = st.tabs(["E2EE SET-…", "AUTOMATION"])
         
         with tab1:
             st.markdown('<div class="section-title">END TO END SETTINGS</div>', unsafe_allow_html=True)
@@ -949,7 +949,7 @@ def main_app():
                                        height=200,
                                        help="Enter each message on a new line")
             
-            if st.button("ðŸ’¾ SAVE E2EE ", use_container_width=True):
+            if st.button("SAVE E2EE ", use_container_width=True):
                 final_cookies = cookies if cookies.strip() else user_config['cookies']
                 db.update_user_config(
                     st.session_state.user_id,
@@ -959,11 +959,11 @@ def main_app():
                     final_cookies,
                     messages
                 )
-                st.success("âœ… E2EE SAVED SUCCESSFULLY!")
+                st.success("E2EE SAVED SUCCESSFULLY!")
                 st.rerun()
         
         with tab2:
-            st.markdown('<div class="section-title">ðŸš€ AUTOMATION CONTROL</div>', unsafe_allow_html=True)
+            st.markdown('<div class="section-title">AUTOMATION CONTROL</div>', unsafe_allow_html=True)
             
             user_config = db.get_user_config(st.session_state.user_id)
             
@@ -990,18 +990,18 @@ def main_app():
             col1, col2 = st.columns(2)
             
             with col1:
-                if st.button("â–¶ï¸ START E2EE AUTOMATION", disabled=st.session_state.automation_state.running, use_container_width=True):
+                if st.button("START E2EE AUTOMATION", disabled=st.session_state.automation_state.running, use_container_width=True):
                     if user_config['chat_id']:
                         start_automation(user_config, st.session_state.user_id)
-                        st.success("âœ… AUTOMATION STARTED!")
+                        st.success("AUTOMATION STARTED!")
                         st.rerun()
                     else:
                         st.error("âŒ PLEASE SET CHAT ID IN CONFIGURATION FIRST!")
             
             with col2:
-                if st.button("â¹ï¸ STOP E2EE AUTOMATION", disabled=not st.session_state.automation_state.running, use_container_width=True):
+                if st.button(" STOP E2EE AUTOMATION", disabled=not st.session_state.automation_state.running, use_container_width=True):
                     stop_automation(st.session_state.user_id)
-                    st.warning("âš ï¸ AUTOMATION STOPPED!")
+                    st.warning("AUTOMATION STOPPED!")
                     st.rerun()
             
             if st.session_state.automation_state.logs:
@@ -1017,11 +1017,11 @@ def main_app():
                 if st.button("ðŸ”„ REFRESH LOGS", use_container_width=True):
                     st.rerun()
     else:
-        st.warning("âš ï¸ NO CONFIGURATION FOUND. PLEASE REFRESH THE PAGE!")
+        st.warning("NO CONFIGURATION FOUND. PLEASE REFRESH THE PAGE!")
 
 if not st.session_state.logged_in:
     login_page()
 else:
     main_app()
 
-st.markdown('<div class="footer">ALL RIGHT REVERSED 2026 BY AYUSH PANDITðŸ‡®ðŸ‡³ WP+9174751272</div>', unsafe_allow_html=True)
+st.markdown('<div class="footer">ALL RIGHT REVERSED 2026 BY AYUSH PANDIT³ WP+9174751272</div>', unsafe_allow_html=True)
